@@ -1,6 +1,11 @@
 /* ✅ Tailwind v4 syntax */
 @import "tailwindcss";
 
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+}
+
 body {
   font-family: "Inter", sans-serif;
 }
@@ -9,4 +14,10 @@ h1,
 h2,
 h3 {
   font-family: "Playfair Display", serif;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
 }
