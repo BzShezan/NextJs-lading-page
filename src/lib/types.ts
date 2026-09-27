@@ -39,6 +39,19 @@ export type AboutData = {
   image?: string; // section photo (Supabase Storage)
 };
 
+export type TeamMember = {
+  name?: string;
+  role?: string;
+  bio?: string;
+  image?: string;
+};
+
+export type TeamData = {
+  heading?: string;
+  subheading?: string;
+  items?: TeamMember[];
+};
+
 export type TestimonialItem = {
   text?: string;
   name?: string;
