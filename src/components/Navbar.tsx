@@ -2,7 +2,7 @@
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
 
-const links = ["Services", "Projects", "About", "Contact"];
+const links = ["Services", "Projects", "About", "Team", "Contact"];
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
