@@ -5,6 +5,7 @@ import Gallery from "@/components/Gallery";
 import Hero from "@/components/Hero";
 import Navbar from "@/components/Navbar";
 import Services from "@/components/Services";
+import Team from "@/components/Team";
 import Testimonials from "@/components/Testimonials";
 import { getContent, getGallery } from "@/lib/content";
 import type {
@@ -13,6 +14,7 @@ import type {
   GalleryData,
   HeroData,
   ServicesData,
+  TeamData,
   TestimonialsData,
 } from "@/lib/types";
 
@@ -25,6 +27,7 @@ export default async function Home() {
     galleryHead,
     galleryItems,
     about,
+    team,
     testimonials,
     contact,
   ] = await Promise.all([
@@ -33,6 +36,7 @@ export default async function Home() {
     getContent<GalleryData>("gallery"),
     getGallery(),
     getContent<AboutData>("about"),
+    getContent<TeamData>("team"),
     getContent<TestimonialsData>("testimonials"),
     getContent<ContactData>("contact"),
   ]);
@@ -44,6 +48,7 @@ export default async function Home() {
       <Services data={services} />
       <Gallery data={galleryHead} items={galleryItems} />
       <About data={about} />
+      <Team data={team} />
       <Testimonials data={testimonials} />
       <Contact data={contact} />
       <Footer />
