@@ -1,4 +1,4 @@
-import { Home, Image as ImageIcon, LogOut, Type } from "lucide-react";
+import { Home, Image as ImageIcon, LogOut, Type, Users } from "lucide-react";
 import Link from "next/link";
 
 const menu = [
@@ -6,6 +6,7 @@ const menu = [
   { href: "/admin/services", label: "Services", icon: Type },
   { href: "/admin/gallery", label: "Gallery Projects", icon: ImageIcon },
   { href: "/admin/about", label: "About Section", icon: Type },
+  { href: "/admin/team", label: "Team", icon: Users },
   { href: "/admin/testimonials", label: "Testimonials", icon: Type },
   { href: "/admin/contact", label: "Contact Section", icon: Type },
 ];
@@ -17,7 +18,6 @@ export default function AdminLayout({
 }) {
   return (
     <div className="flex min-h-screen bg-stone-100">
-      {/* Sidebar */}
       <aside className="w-64 bg-stone-900 text-stone-300 p-5 flex flex-col">
         <h1 className="text-xl font-bold text-white">Atelier Admin</h1>
         <nav className="mt-8 flex flex-col gap-1 text-sm">
@@ -45,7 +45,6 @@ export default function AdminLayout({
           </form>
         </div>
       </aside>
-      {/* Content */}
       <main className="flex-1 p-10">{children}</main>
     </div>
   );
